@@ -1,5 +1,8 @@
 package main.java;
 
+import main.java.constants.ExceptionMessages;
+import main.java.exception.InvalidValueException;
+
 public class Player {
     private String name;
     private int health;
@@ -7,6 +10,9 @@ public class Player {
     private int attack;
 
     public Player(String name, int health, int strength, int attack) {
+        if (health <= 0 || strength <= 0 || attack <= 0) {
+            throw new InvalidValueException(ExceptionMessages.INVALID_CRED_VALUE.getMessage());
+        }
         this.name = name;
         this.health = health;
         this.strength = strength;
@@ -47,6 +53,9 @@ public class Player {
     }
 
     public void setHealth(int health) {
+        if (health <= 0) {
+            throw new InvalidValueException(ExceptionMessages.INVALID_CRED_VALUE.getMessage());
+        }
         this.health = health;
     }
 
@@ -55,6 +64,9 @@ public class Player {
     }
 
     public void setStrength(int strength) {
+        if (health <= 0) {
+            throw new InvalidValueException(ExceptionMessages.INVALID_CRED_VALUE.getMessage());
+        }
         this.strength = strength;
     }
 
@@ -63,6 +75,9 @@ public class Player {
     }
 
     public void setAttack(int attack) {
+        if (health <= 0) {
+            throw new InvalidValueException(ExceptionMessages.INVALID_CRED_VALUE.getMessage());
+        }
         this.attack = attack;
     }
 
