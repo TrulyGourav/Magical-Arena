@@ -1,4 +1,4 @@
-package main.java;
+package com.example.arena;
 
 public class Arena {
     private final Player playerA;
