@@ -1,7 +1,7 @@
-package main.java;
+package com.example.arena;
 
-import main.java.constants.ExceptionMessages;
-import main.java.exception.InvalidValueException;
+import com.example.arena.constants.ExceptionMessages;
+import com.example.arena.exception.InvalidValueException;
 
 public class Player {
     private String name;
