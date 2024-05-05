@@ -14,5 +14,5 @@ Environment/IDE:
 - download and setup Java 17 in the IDE (IntelliJ Idea/Eclipse)
 - Clone/download this repo to your device. If you are with a zipped file of the source code, unzip the folder.
 - import/open the project in the IDE as a maven project.
-- Run maven to download depenedencies.
+- Run maven to download dependencies.
 - Once dependencies are resolved, run Main.java to run the project.
