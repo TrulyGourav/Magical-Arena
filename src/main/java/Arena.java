@@ -14,11 +14,16 @@ public class Arena {
     }
 
     public void play() {
-        while (playerA.isAlive() && playerB.isAlive()) {
-            int attackRoll = attackDice.roll();
-            int defenseRoll = defenseDice.roll();
-
+        System.out.println("Initial credits: ");
+        System.out.println("    Player A: "+playerA.toString());
+        System.out.println("    Player B: "+playerB.toString());
+        System.out.println("Lets start the game!");
+        System.out.println("-----------------------");
+        while (true) {
+            // playerA's turn
             if (playerA.isAlive()) {
+                int attackRoll = attackDice.roll();
+                int defenseRoll = defenseDice.roll();
                 int attackDamage = playerA.getAttackDamage(attackRoll);
                 int defenseStrength = playerB.getDefenseStrength(defenseRoll);
                 int damageDealt = Math.max(0, attackDamage - defenseStrength);
@@ -27,8 +32,10 @@ public class Arena {
                 System.out.println(playerB.getName()+" defends with strength: " + defenseStrength);
                 System.out.println(playerB.getName()+" health reduced to: " + playerB.getHealth());
             }
-
+            // playerB's turn
             if (playerB.isAlive()) {
+                int attackRoll = attackDice.roll();
+                int defenseRoll = defenseDice.roll();
                 int attackDamage = playerB.getAttackDamage(attackRoll);
                 int defenseStrength = playerA.getDefenseStrength(defenseRoll);
                 int damageDealt = Math.max(0, attackDamage - defenseStrength);
@@ -37,13 +44,19 @@ public class Arena {
                 System.out.println(playerA.getName()+" defends with strength: " + defenseStrength);
                 System.out.println(playerA.getName()+" health reduced to: " + playerA.getHealth());
             }
+            if (!playerA.isAlive() || !playerB.isAlive()){
+                break;
+            }
+            System.out.println("---------Next Cycle--------");
         }
 
+        System.out.println("-----------------------");
         if (!playerA.isAlive()) {
-            System.out.println("Hurrayyy! "+playerB.getName()+" wins this Arena!");
+            System.out.println("RESULT: Hurrayyy! "+playerB.getName()+" wins this Arena!");
         } else {
-            System.out.println("Hurrayyy! "+playerA.getName()+" wins this Arena!");
+            System.out.println("RESULT: Hurrayyy! "+playerA.getName()+" wins this Arena!");
         }
+        System.out.println("-----------------------");
     }
 }
 
