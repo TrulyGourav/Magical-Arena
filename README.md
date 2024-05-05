@@ -16,3 +16,5 @@ Environment/IDE:
 - import/open the project in the IDE as a maven project.
 - Run maven to download dependencies.
 - Once dependencies are resolved, run Main.java to run the project.
+
+author @gourav.oct@gmail.com
